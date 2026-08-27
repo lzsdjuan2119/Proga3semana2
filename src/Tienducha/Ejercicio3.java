@@ -3,11 +3,13 @@ import javax.swing.JOptionPane;
 
 public class Ejercicio3 {
     public static void main(String[] args) {
-        double monto = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto total de los productos:"));
+        Tienda tienda = new Tienda("Tambo Canadá-C8");
         
-        Tienda tienda = new Tienda();
-        double totalPagar = tienda.calcularMontoAPagar(monto);
+        String cliente = JOptionPane.showInputDialog(null, "Ingrese el nombre o Razón Social del cliente:");
+        double importe = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el importe total (S/):"));
         
-        JOptionPane.showMessageDialog(null, "El monto total a pagar (con 15% de descuento) es: " + totalPagar);
+        String comprobante = tienda.emitirComprobante(cliente, importe);
+        
+        JOptionPane.showMessageDialog(null, comprobante, "Punto de Venta", JOptionPane.INFORMATION_MESSAGE);
     }
 }
