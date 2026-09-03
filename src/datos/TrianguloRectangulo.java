@@ -1,4 +1,4 @@
-package Triangulocho;
+package datos;
 
 public class TrianguloRectangulo {
     private double catetoA;
